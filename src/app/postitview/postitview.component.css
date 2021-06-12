@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Reenie+Beanie');
+
+.postContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+}
+
+.stylePost {
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  background: #ffffa5; /*#ffff66;*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  padding: 5px;
+  
+}
+
+.stylePost > h3 {
+  cursor: pointer;
+}
+
+.stylePost > div > p {
+  font-family: 'Reenie Beanie';
+  font-size: 2em;
+}
+
+.stylePost > div > button {
+  margin-bottom: 5px;
+}
+
+.stylePost:hover {
+  -ms-transform: scale(1.2); 
+  -webkit-transform: scale(1.2); 
+  transform: scale(1.2); 
+  
+}

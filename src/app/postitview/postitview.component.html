@@ -1,0 +1,22 @@
+<div *ngIf="postUser !== undefined">
+  <button (click)="logout()" >Esci</button><button *ngIf="!viewNewPost" (click)="viewNewPost=true">Crea nuovo Post-It</button>
+  <div *ngIf="postUser.length > 0; else showText">
+    <button (click)="viewImportantPost=true" *ngIf="!viewImportantPost">Visualizza Post importanti</button>
+    <button (click)="viewImportantPost=false" *ngIf="viewImportantPost">Vedi tutti</button>
+    <div class="postContainer">
+      <div *ngFor="let post of postView()">
+        <div class="stylePost">
+          <h3 (click)="toggleText(txt)">{{ post.titolo }}</h3>
+          <div #txt style="display:none">
+            <p>{{ post.testo }}</p>
+            <app-deletepostit [post]="postUser" [deletePost]="postUser.indexOf(post)" [key]="codeUser"></app-deletepostit>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #showText>
+    <p>Non hai Post-It da visualizzare</p>
+  </ng-template>
+  <app-newpostit [post]="postUser" [creaPost]="viewNewPost" (showNewPost)="viewNewPost=$event" [key]="codeUser"></app-newpostit>
+</div>

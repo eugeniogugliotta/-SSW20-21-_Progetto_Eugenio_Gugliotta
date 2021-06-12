@@ -1,0 +1,9 @@
+<div *ngIf="creaPost === true" class="style">
+  <h3>Nuovo Post-It</h3>
+  <input type="text" #titolo placeholder="Inserisci titolo" (keyup)="msgErrore=''"><br>
+  <textarea #testo placeholder="Inserisci testo..." (keyup)="msgErrore=''"></textarea><br>
+  <input #importante type="checkbox"> segna come importante<br>
+  <button (click)="save(titolo.value,testo.value,importante.checked)">Salva</button>
+  <button (click)="showNewPost.emit(false)">Annulla</button><br>
+  <span id="error">{{ msgErrore }}</span>
+</div>

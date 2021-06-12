@@ -1,0 +1,13 @@
+<h2>{{ titolo }}</h2>
+
+<div *ngIf="post === undefined" class="style">
+  <h2>Login</h2>
+  <input #dato placeholder="Inserisci codice" (keyup)="msgErrore=''">
+  <button (click)="login(dato.value);dato.value=''">Accedi</button>
+  <p id="err">{{ msgErrore }}</p>
+  <p>Non hai ancora un codice?<br><u (click)="getKey()">Ottieni un codice</u></p>
+</div>
+
+<p *ngIf="newKey !== undefined && post !== undefined">Il tuo codice personale è: <b>{{ newKey }}</b></p>
+
+<app-postitview [postUser]="post" [codeUser]="code"></app-postitview>

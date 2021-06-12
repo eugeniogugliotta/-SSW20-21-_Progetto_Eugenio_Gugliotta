@@ -1,0 +1,19 @@
+.style {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  padding: 20px 20px 20px 20px;
+  color: #000000;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.style>p>u {
+  cursor:pointer;
+}
+
+#err {
+  color: red;
+}
